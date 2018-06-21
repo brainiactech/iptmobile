@@ -1,0 +1,28 @@
+page-outlet-daily-log {
+  .y-after-y-grid{
+    padding: 9px;
+    margin-top: -5px;
+  }
+
+  .y-create-col{
+    background: #fff;
+    border: 1px solid green;
+    margin-top: 20px;
+    height: 100%;/*height: 55px;*/
+  }
+  .y-create-col ion-icon{
+    color: #008751;
+    font-size: 2em;
+    padding: 2px;
+  }
+  .y-grid ion-col.y-remove-space{
+
+    margin-bottom: 2px;
+    height: 55px;
+
+  }
+  ion-grid.y-grid.grid{
+    height: 60px;
+
+  }
+}

@@ -1,0 +1,168 @@
+
+<ion-header>
+    <ion-navbar class="y-navbar y-subnav">
+        <ion-title>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+
+          <ion-icon name="notifications" float-right></ion-icon>
+        </ion-title>
+
+
+        <h4 class="y-white-text">Last Update: </h4>
+    <p><span class="y-left-span">Received {{depotTotalReceived | number}} ltrs  </span>
+      <span class="y-right-span">Dispatched {{depotTotalDispatches | number}} ltrs  </span>
+    </p>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="y-form" padding>
+
+  <div class="y-wrap">
+    <h1 text-center>Depot to Outlet</h1>
+    <p class="y-small-danger"><span>Last Quantity Received: </span><span>{{lastQuantityReceived | number}} Ltrs </span></p>
+
+    <form [formGroup]="data" (ngSubmit)="presentProfileModal(data)">
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Depot Name</ion-label>
+          <ion-select
+            #C (ionChange)="onChange(C.value, D.value)"
+            formControlName="depot_id"
+            placeholder="Select Mode">
+            <ion-option *ngFor="let each of depot_id" value={{each[1].id}}>{{each[1].name}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="data.controls.depot_id.invalid && data.controls.depot_id.dirty" no-lines>
+          <p class="invalid">Depot Required</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Retail Outlet Name</ion-label>
+          <ion-select
+            formControlName="retail_outlet_id"
+            placeholder="Select Mode">
+            <ion-option *ngFor="let one of retail_outlet_id" value={{one[1].id}}>{{one[1].name}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="data.controls.retail_outlet_id.invalid && data.controls.retail_outlet_id.dirty" no-lines>
+          <p class="invalid">Retail Outlet Required</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Product Type</ion-label>
+          <ion-select
+            #D (ionChange)="onChange2(C.value, D.value)"
+            formControlName="type_id"
+            placeholder="Select Mode">
+            <ion-option *ngFor="let oneProduct of type_id" value={{oneProduct[1].id}}>{{oneProduct[1].name}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="data.controls.type_id.invalid && data.controls.type_id.dirty" no-lines>
+          <p class="invalid">Product Required</p>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-label class="col-date-label">
+            <ion-icon name="md-calendar"></ion-icon>
+            Loading Date
+          </ion-label>
+          <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="loading_date"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="data.controls.loading_date.invalid && data.controls.loading_date.dirty" no-lines>
+          <p class="invalid">Loading Date Required</p>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Transporter Name</ion-label>
+          <ion-input formControlName="transporter_name" type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Truck Number</ion-label>
+          <ion-input formControlName="truck_number" type="text" value=""></ion-input>
+        </ion-item>
+        <ion-item *ngIf="data.controls.truck_number.invalid && data.controls.truck_number.dirty" no-lines>
+          <p class="invalid">Truck Number Required</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Meter Ticket Number</ion-label>
+          <ion-input formControlName="meter_ticket_number" type="text" value=""></ion-input>
+        </ion-item>
+        <ion-item *ngIf="data.controls.meter_ticket_number.invalid && data.controls.meter_ticket_number.dirty" no-lines>
+          <p class="invalid">Meter Ticket Required</p>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Product Quantity</ion-label>
+          <ion-input formControlName="product_qty" type="number" value=""></ion-input>
+        </ion-item>
+        <ion-item *ngIf="data.controls.product_qty.invalid && data.controls.product_qty.dirty" no-lines>
+          <p class="invalid">Product Quantity Required</p>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Waybill Number</ion-label>
+          <ion-input formControlName="waybill_no" type="text" value=""></ion-input>
+        </ion-item>
+        <ion-item *ngIf="data.controls.waybill_no.invalid && data.controls.waybill_no.dirty" no-lines>
+          <p class="invalid">Waybill Number Required</p>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label>Waybill Quantity</ion-label>
+          <ion-input formControlName="waybill_qty" type="number" value=""></ion-input>
+        </ion-item>
+        <ion-item *ngIf="data.controls.waybill_qty.invalid && data.controls.waybill_qty.dirty" no-lines>
+          <p class="invalid">Waybill Quantity</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Driver Name</ion-label>
+          <ion-input formControlName="driver_name" type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Driver Phone Number</ion-label>
+          <ion-input formControlName="driver_number" type="text" value=""></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label class="col-date-label">
+            <ion-icon name="md-calendar"></ion-icon>
+            Estimated Date of Arrival
+          </ion-label>
+          <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="date_of_arrival"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="data.controls.date_of_arrival.invalid && data.controls.date_of_arrival.dirty" no-lines>
+          <p class="invalid">Date of Arrival Required</p>
+        </ion-item>
+
+
+      </ion-list>
+      <p>
+        <button ion-button full color="secondary" [disabled]="data.invalid">Confirm</button>
+        <!--<button ion-button full color="secondary" >Confirm</button>-->
+      </p>
+
+    </form>
+
+  </div>
+
+
+</ion-content>

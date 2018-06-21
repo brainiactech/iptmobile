@@ -1,0 +1,248 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+h1, h2, h3, h4, p, ion-input{
+    color: #008751;
+}
+
+.text-input::-moz-placeholder {
+    color: #008751;
+}
+  
+  .text-input:-ms-input-placeholder {
+    color: #008751;
+  }
+  
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #008751;
+  }
+
+  .y-form h1, .y-form h2, .y-form h3, .y-form h4, .y-form p, .y-form input{
+    color: #008751;
+}
+
+  .y-form h1{
+    color: #008751;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.y-form p i{
+    color: #008751;
+}
+
+      .y-form ion-item{
+        border: 1px solid #008751;
+        margin: 1.2em 1px;
+        height: 35px;
+        font-size: 13px;
+    }
+    .y-form ion-item:last-child{
+        margin-bottom: 3em;
+
+    }
+    .y-form ion-item ion-icon{
+        margin: 0 2px 0 0;
+        color: #008751;
+    }
+
+    .y-form .y-small-danger,.y-small-danger {
+        color: #e92323;
+        padding: 0; margin: 0;
+    }
+    .y-navbar p{
+        margin-top: 2em;
+    }
+    .y-navbar p span{
+        color: #fff;/* #A84F4F */;
+        font-size: 13px;
+        padding: 1em;
+    }
+    .y-navbar p span.y-left-span{
+        float: left;
+    }
+    .y-navbar p span.y-right-span{
+        float: right;
+    }
+    div.y-navbar.y-subnav{
+        background-color: #75D1AC;
+        width: 100%;
+        padding: 0; margin: 0;
+    }
+    ionic-navbar.y-navbar.y-subnav{
+        background-color: #75D1AC;
+        width: 100%;
+        padding: 0; margin: 0;
+    }
+    .y-clear{
+        clear: both;
+    }
+
+        .y-wrap{
+        background-color: rgba(234, 250, 241, 0.3);
+        padding: 1.2em;
+        
+        box-shadow: 1px 1px 4px rgb(144, 233, 206);
+    }
+    .y-white-text{
+        color: #fff;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 1px; margin: 1px;
+
+    }
+    .y-block-center{
+        
+        padding: 1em;
+        
+    }
+    .y-block-center p span.y-left-side{
+        float: left;
+        text-align: right;
+    }
+    .y-block-center p{
+        padding: 1px;
+        
+        
+    }
+    .y-block-center p span.y-right-side{
+        float: right;
+        text-align: left;
+        color: #A84F4F;
+    }
+    .y-black-italic{
+        color: black !important;
+        font-style: italic;
+    }
+
+    .y-block-wrap{
+        background-color: #E4F7EC;
+        padding: 1em;
+        width: 96%;
+        margin: 1em auto;
+        box-shadow: 1px 1px 4px rgb(144, 233, 206);
+    }
+    .y-block-wrap ion-row ion-col:last-child p{
+        color: #A84F4F;
+        
+    }
+    .y-block-wrap ion-row ion-col{
+        
+    }
+    .y-nav-sub{
+       /* background-color: #75D1AC; */
+       background-color: #008751;
+       margin-top: -5px;
+    }
+    .y-nav-sub p span{
+        color: #fff; /* #A84F4F;*/
+    }
+    .y-select-full{
+        max-width: 100% !important;
+        width: 100% !important;
+        
+    }
+    .y-success-page{
+        padding: 1em;
+        margin: 2em auto;
+        text-align: center;
+    }
+    .y-success-page h1{
+        font-size: 1.2em;
+       
+
+    }
+    .y-success-page-content  h1{
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .y-success-page ion-icon{
+        font-size: 8em;
+        margin: 5px;
+
+    }
+
+
+    .y-menu-icon{
+        margin: 5px 15px;
+    }
+
+    .y-p4profileimg img{
+        width: 40px;
+        height: auto;
+       
+        border: 2px solid #fff;
+        border-radius: 20px;
+        padding: 3px;
+        margin-left: 1em;
+
+    }
+    .y-p4profileimg{
+        margin-bottom: 20px;
+    }
+    .y-p4profileimg .y-profile-label{
+        color: #fff;
+    }
+    .y-thumbnail-holder{
+        
+        width: 50px; height: 50px;
+        background-color: #41D596;
+        border-radius: 25px;
+    }
+
+    /* *** mother and daughter vessel dropdown page styling *** */
+    .y-wrap.y-with-vessel-dropdown{
+        padding: 1px;
+
+         h1{
+            padding: 1em;
+        }
+         p.y-small-danger{
+            padding-left: 1em;
+            
+        }
+         .y-after-y-grid{
+            padding: 9px;
+            margin-top: -5px; 
+        }
+        .y-create-col{
+            background: #fff;
+            border: 1px solid green;
+            margin-top: 20px;
+            height: 100%;/*height: 55px;*/
+        }
+        .y-create-col ion-icon{
+            color: #008751;
+            font-size: 2em;
+            padding: 2px;
+        }
+        .y-grid ion-col.y-remove-space{
+           
+            margin-bottom: 2px; 
+            height: 55px;
+    
+        }
+        ion-grid.y-grid.grid{
+            height: 60px;
+
+        }
+    
+    }
+
+

@@ -1,0 +1,33 @@
+page-outlet-received-final {
+    .y-block-wrap{
+        position: relative;
+        
+    }
+    .y-back{
+        color: gray;
+        font-weight: bold;
+        font-size: 1.7em;
+        position: absolute;
+        background: transparent;
+        left: 5px;
+        padding: 1em;
+        cursor: pointer;
+
+
+    }
+    .y-back-btn{
+
+    }
+    .y-block-item-c p:first-child{
+        font-size: 1.2em;
+        padding: 0; margin: 0;
+    }
+    .y-block-item-c p:last-child{
+        font-size: 1.4em;
+        color: #FF0000;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+
+
+}

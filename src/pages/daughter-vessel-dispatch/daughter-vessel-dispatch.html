@@ -1,0 +1,156 @@
+<!--
+  Generated template for the TerminalReceivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar class="y-navbar y-subnav">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+
+        <ion-title>
+            <h6>
+                <ion-icon name="notifications" float-right></ion-icon>
+            </h6>
+        </ion-title>
+        <h4 class="y-white-text">Last Update: </h4>
+        <p><span class="y-left-span">Received {{daughterVesselTotalReceived}} ltrs  </span>
+            <span class="y-right-span">Dispatched {{daughterVesselTotalDispatches}} ltrs  </span>
+        </p>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="y-form" padding>
+
+    <div class="y-wrap y-with-vessel-dropdown">
+        <h1 text-center>Daughter Vessel Dispatch</h1>
+        <!-- <p class="y-small-danger"><span>Expected Quantity: </span><span>{{expectedQuantity}} Ltrs </span></p> -->
+
+        <form [formGroup]="data" (ngSubmit)="presentProfileModal(data)">
+            <ion-list>
+
+                <ion-grid class="y-grid">
+                    <ion-row>
+                        <ion-col col-10 class="y-remove-space">
+                            <ion-item>
+                                <ion-label floating></ion-label>
+                                <ion-select formControlName="daughter_vessel_id" #D (ionChange)="onChange2(D.value, P.value)" placeholder="Daughter Vessel">
+                                    <ion-option *ngFor="let eachOne of daughter_vessel_id" value={{eachOne[1].id}}>{{eachOne[1].name}}
+                                    </ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col col-2 class="y-create-col" ion-button (click)="presentDaughterVesselCreate()">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <div class="y-after-y-grid">
+                    <ion-item>
+                        <ion-label floating></ion-label>
+                        <ion-select formControlName="type_id"  #P (ionChange)="onChangeProduct(D.value, P.value)" placeholder="Product Type">
+                            <ion-option *ngFor="let oneProduct of type_id" value={{oneProduct[1].id}}>{{oneProduct[1].name}}
+                            </ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.type_id.invalid && data.controls.type_id.dirty" no-lines>
+                        <p class="invalid">Product Required</p>
+                    </ion-item>
+
+
+
+                    <!-- <ion-item *ngIf="toggleDispatch">
+                    <ion-label>Depot Name</ion-label>
+                    <ion-select formControlName="depot_id" placeholder="Select Mode">
+                        <ion-option *ngFor="let each of depot_id" value={{each[1].id}}>{{each[1].name}}
+                        </ion-option>
+                    </ion-select>
+                </ion-item> -->
+
+
+                    <ion-item>
+                        <ion-label floating></ion-label>
+                        <ion-select formControlName="terminal_id" placeholder="Terminal">
+                            <ion-option *ngFor="let each of terminal_id" value={{each[1].id}}>{{each[1].name}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating></ion-label>
+                        <ion-input formControlName="qty_dispatched" type="number" value="" placeholder="Quantity received (in MT)"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.qty_dispatched.invalid && data.controls.qty_dispatched.dirty" no-lines>
+                        <p class="invalid">Quantity Dispached Required</p>
+                    </ion-item>
+
+
+
+                    <ion-input formControlName="status_id" type="hidden" value="6"></ion-input>
+
+
+
+                    <ion-item>
+                        <ion-label floating></ion-label>
+
+                        <ion-input type="number" formControlName="bill_of_laden_qty" placeholder="bill of laden quantity"></ion-input>
+
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.bill_of_laden_qty.invalid && data.controls.bill_of_laden_qty.dirty" no-lines>
+                        <p class="invalid">Bill of Laden Quantity Required</p>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating></ion-label>
+
+                        <ion-input type="text" formControlName="bill_of_laden_no" placeholder="bill of laden number"></ion-input>
+
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.bill_of_laden_no.invalid && data.controls.bill_of_laden_no.dirty" no-lines>
+                        <p class="invalid">Bill of Laden Number Required</p>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label class="col-date-label">
+                            <ion-icon name="md-calendar"></ion-icon>
+                            Bill of Laden Date
+                        </ion-label>
+                        <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="bill_of_laden_date"></ion-datetime>
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.bill_of_laden_date.invalid && data.controls.bill_of_laden_date.dirty" no-lines>
+                        <p class="invalid">Bill of Laden Required</p>
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-label class="col-date-label">
+                            <ion-icon name="md-calendar"></ion-icon>
+                            Dispatched Date
+                        </ion-label>
+                        <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="dispatch_date"></ion-datetime>
+                    </ion-item>
+                    <ion-item *ngIf="data.controls.dispatch_date.invalid && data.controls.dispatch_date.dirty" no-lines>
+                        <p class="invalid">Dispatched Required</p>
+                    </ion-item>
+                </div>
+
+
+
+
+            </ion-list>
+            <p>
+                <button ion-button full color="secondary" [disabled]="data.invalid">Confirm</button>
+            </p>
+
+        </form>
+
+    </div>
+
+
+</ion-content>

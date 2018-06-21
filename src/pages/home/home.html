@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar class="y-navbar y-subnav">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home
+      <ion-icon name="notifications" float-right></ion-icon>
+    </ion-title>
+  </ion-navbar>
+  <!-- <div class="y-nav-sub">
+      <h4 class="y-white-text">Last Update: </h4>
+      <ion-row text-center>
+          <ion-col col-md-6>
+              <p><span> Received 3,200 ltrs</span> </p>
+          </ion-col>
+          <ion-col col-md-6>
+              <p><span> Dispatched 1,500 ltrs</span></p>
+          </ion-col>
+      </ion-row>
+  </div>   -->
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card class="y-card" (click)="gotoReceive()">
+    <ion-card-header class="y-card-title">
+      Receive
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <!-- <button> -->Enter the total amount of product received from the vessel<!-- </button> -->
+
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="y-card" (click)="gotoDispatch()">
+    <ion-card-header class="y-card-title">
+      Dispatch
+    </ion-card-header>
+    <ion-card-content>
+      <p>Enter the total amount of product dispatched from the marketer</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

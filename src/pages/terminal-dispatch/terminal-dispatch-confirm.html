@@ -1,0 +1,164 @@
+<!--
+  Generated template for the TerminalDispatchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="y-navbar y-subnav">
+
+    <ion-title>
+      <h6>
+
+        <ion-icon name="notifications" float-right></ion-icon>
+      </h6>
+    </ion-title>
+
+    <!-- <h4 class="y-white-text">Last Update: </h4>
+    <p><span class="y-left-span">Received 3,200 ltrs  </span>
+      <span class="y-right-span">Dispatched 1,500 ltrs  </span>
+    </p> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="y-form" padding>
+
+
+  <div class="y-block-wrap">
+    <h1 text-center>Terminal Dispatch</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Dispatch Type: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{dispatchType}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Terminal Name: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{terminal}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Depot Name: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{depot}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Product Name: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{product}}</p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Retail Outlet : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p>{{retail}} </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Loading Date: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{loading_date}}</p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Driver's Name : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{driver_name}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Driver's Phone Number : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{driver_no}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Meter Ticket: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{meter_ticket_no}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Product Quatity : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{product_qty | number}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Way Bill Number : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{waybill_no}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Arival Date : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{est_date_of_arrival}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Aquila Code : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{acquila_code}}</p>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    <p class="y-black-italic" text-center>Please verify all data before submitting</p>
+
+    <p>
+      <button ion-button full color="secondary" (click)="confirm();">Submit</button>
+      <button ion-button full color="danger" (click)="reject();">Cancel</button>
+    </p>
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,71 @@
+<!--
+  Generated template for the MarketerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>marketer</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-header>
+    <ion-navbar class="y-navbar y-subnav">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title text-center>Marketers
+            <ion-icon name="notifications" float-right></ion-icon>
+        </ion-title>
+    </ion-navbar>
+    <div class="y-nav-sub">
+    </div>
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="data">
+
+        <ion-item>
+            <ion-label floating></ion-label>
+            <ion-select #C (ionChange)="onChange(C.value)" formControlName="retail_outlet_id" placeholder="Retail Outlet Name">
+                <ion-option *ngFor="let one of retail_outlet_id" value={{one[1].id}}>{{one[1].name}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </form>
+
+    <ion-card class="y-card">
+        <ion-card-header class="y-card-title">
+            {{outletMPSCapacity | number}} litres
+        </ion-card-header>
+        <ion-card-content>
+            <p>Total Product Accessible</p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="y-card">
+        <ion-card-header class="y-card-title">
+            {{outletTotalQTYReceived | number}} litres
+        </ion-card-header>
+        <ion-card-content>
+            <p>Total Monthly Product Taken </p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="y-card">
+        <ion-card-header class="y-card-title">
+            {{outletMPSBalanceRemaining | number}} litres
+        </ion-card-header>
+        <ion-card-content>
+            <p>Total Balance Remaining</p>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

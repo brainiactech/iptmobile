@@ -1,0 +1,105 @@
+<!--
+  Generated template for the TerminalReceivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="y-navbar y-subnav">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+
+    <ion-title>
+      <h6>
+        <ion-icon name="notifications" float-right></ion-icon>
+      </h6>
+    </ion-title>
+    <!-- <h4 class="y-white-text">Last Update: </h4>
+  <p><span class="y-left-span">Received 3,200 ltrs  </span>
+    <span class="y-right-span">Dispatched 1,500 ltrs  </span>
+  </p> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="y-form" padding>
+  <div></div>
+
+
+  <div class="y-block-wrap">
+    <h1 text-center>Terminal Receive</h1>
+    <!-- <p class="y-small-danger"><span>Expected Quantity: </span><span>150,000 Ltrs </span></p> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Daughter Vessel Name : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{daughter_vessel}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Terminal Name: </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{terminal}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Bill date : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{bill_date}} </p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Bill of Laden Number : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{bill_of_laden_no}} </p>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Quantity Dispatched : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p>{{qty_dispatch | number}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-md-6>
+          <p>Product Type : </p>
+        </ion-col>
+        <ion-col col-md-6>
+          <p> {{product}}</p>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    <p class="y-black-italic"> Please verify all data before submitting </p>
+
+
+    <p>
+      <button ion-button full color="secondary" (click)="confirm();">Submit</button>
+      <button ion-button full color="danger" (click)="reject();">Cancel</button>
+    </p>
+  </div>
+
+</ion-content>

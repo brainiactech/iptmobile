@@ -1,0 +1,137 @@
+<ion-header>
+    <ion-navbar class="y-navbar y-subnav">
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title text-center>Depot Receive
+        </ion-title>
+    </ion-navbar>
+    <div class="y-nav-sub">
+    </div>
+</ion-header>
+
+
+<ion-content class="y-form" padding>
+    <div class="y-wrap">
+        <h1 text-center>Depot Receive</h1>
+
+        <ion-list>
+            <form [formGroup]="data" (ngSubmit)="presentationModal(data)">
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-select formControlName="product_type_id" placeholder="Product Type">
+                        <ion-option *ngFor="let productType of products" value={{productType[1].id}}>{{productType[1].name}}</ion-option>
+                    </ion-select>
+                    <ion-item *ngIf="data.controls.product_type_id.invalid && data.controls.product_type_id.dirty" no-lines>
+                        <p class="invalid">Product type</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-select formControlName="terminal_id" placeholder="Terminal">
+                        <ion-option *ngFor="let terminal of terminals" value={{terminal[1].id}}>{{terminal[1].name}}</ion-option>
+                    </ion-select>
+                    <ion-item *ngIf="data.controls.terminal_id.invalid && data.controls.terminal_id.dirty" no-lines>
+                        <p class="invalid">Terminal require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-select formControlName="depot_id" placeholder="depot">
+                        <ion-option *ngFor="let depot of depots" value={{depot[1].id}}>{{depot[1].name}}</ion-option>
+                    </ion-select>
+                    <ion-item *ngIf="data.controls.depot_id.invalid && data.controls.depot_id.dirty" no-lines>
+                        <p class="invalid">Depot require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label class="col-date-label">
+                        <ion-icon name="md-calendar"></ion-icon>
+                        Loading Date
+                    </ion-label>
+                    <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="loading_date"></ion-datetime>
+                    <ion-item *ngIf="data.controls.loading_date.invalid && data.controls.loading_date.dirty" no-lines>
+                        <p class="invalid">Date require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="driver_name" value="" placeholder="Driver's Name"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="driver_no" value="" placeholder="Driver Phone Number"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="truck_no" value="" placeholder="Truck Number"></ion-input>
+                    <ion-item *ngIf="data.controls.truck_no.invalid && data.controls.truck_no.dirty" no-lines>
+                        <p class="invalid">This is require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="meter_ticket_no" value="" placeholder="Meter Ticket Number"></ion-input>
+                    <ion-item *ngIf="data.controls.meter_ticket_no.invalid && data.controls.meter_ticket_no.dirty" no-lines>
+                        <p class="invalid">Ticket require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="number" formControlName="product_qty" value="" placeholder="Product Quality"></ion-input>
+                    <ion-item *ngIf="data.controls.product_qty.invalid && data.controls.product_qty.dirty" no-lines>
+                        <p class="invalid">Product require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="waybill_no" value="" placeholder="Way Bill Number"></ion-input>
+                    <ion-item *ngIf="data.controls.waybill_no.invalid && data.controls.waybill_no.dirty" no-lines>
+                        <p class="invalid">This is require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="number" formControlName="waybill_qty" value="" placeholder="Way Bill Quantity"></ion-input>
+                    <ion-item *ngIf="data.controls.waybill_qty.invalid && data.controls.waybill_qty.dirty" no-lines>
+                        <p class="invalid">This is require</p>
+                    </ion-item>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label class="col-date-label">
+                        <ion-icon name="md-calendar"></ion-icon>
+                        Date of Arival
+                    </ion-label>
+                    <ion-datetime text-right displayFormat="DD/MM/YYYY" formControlName="date_of_arrival"></ion-datetime>
+                    <ion-item *ngIf="data.controls.date_of_arrival.invalid && data.controls.date_of_arrival.dirty" no-lines>
+                        <p class="invalid">This is require</p>
+                    </ion-item>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating></ion-label>
+                    <ion-input type="text" formControlName="acquila_code" value="" placeholder="Aquila Code"></ion-input>
+                    <ion-item *ngIf="data.controls.acquila_code.invalid && data.controls.acquila_code.dirty" no-lines>
+                        <p class="invalid">Code require</p>
+                    </ion-item>
+                </ion-item>
+            </form>
+        </ion-list>
+        <p>
+            <button ion-button full color="secondary" (click)="presentationModal();" [disabled]="data.invalid">Confirm</button>
+        </p>
+
+
+
+    </div>
+</ion-content>

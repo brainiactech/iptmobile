@@ -1,0 +1,29 @@
+page-marketer {
+    .y-card{
+        padding: 1em;
+        text-align: center;
+        height: 30%;
+        background-color: #8DBCA2;
+        color: #fff;
+    }
+    .y-card ion-card-header, .y-card p{
+        color: #fff;
+  
+    }
+    .y-card-title{
+        padding: 1em;
+        text-align: center;
+        color: #008751;
+        font-size: 1.2em;
+    }
+    .y-card:nth-child(2){
+        background-color: #9594F7;
+    }
+
+
+    .y-card:last-child{
+        background-color: #79C9F3;
+    }
+    
+
+}
